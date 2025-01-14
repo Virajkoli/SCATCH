@@ -9,8 +9,8 @@ const productsRouter = require("./routes/productsRouter");
 
 app.use(express.json());
 app.set("view engine", "ejs");
-app.set(express.static(path.join(__dirname, "public")));
-app.use(cookieParser);
+app.use(express.static(path.join(__dirname, "public")));
+app.use(cookieParser());
 app.set(express.urlencoded({ extended: true }));
 
 app.use("/owners", ownersRouter);
@@ -18,7 +18,7 @@ app.use("/users", usersRouter);
 app.use("/products", productsRouter);
 
 app.get("/", (req, res) => {
-  res.send("Hey");
+  res.send("Heyy");
 });
 
 app.listen(3000);
