@@ -47,4 +47,9 @@ router.get("/", (req, res) => {
   res.send("hey from owners routers");
 });
 
+router.get("/admin", (req, res) => {
+  let success = req.flash("success");
+  res.render("createProducts", { success });
+});
+
 module.exports = router;
